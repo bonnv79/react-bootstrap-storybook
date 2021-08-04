@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.1590f6fa.chunk.css","sources":["webpack:///src/components/Modal/index.css"],"sourcesContent":[".bootstrap-dialog .button-cancel, .button-save {\r\n  min-width: 80px;\r\n}"],"mappings":"AAAA;AACA;AACA;","sourceRoot":""}
