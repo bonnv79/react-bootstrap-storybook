@@ -11,7 +11,7 @@ npm install --save react-bootstrap-storybook
 ```
 
 ## Demo
-<a href="https://bonnv79.github.io/bng-react-lib/">Click open demo<a/>
+<a href="https://bonnv79.github.io/react-bootstrap-storybook/">Click open demo<a/>
 
 ## Getting Started with Create React App
 
