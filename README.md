@@ -31,6 +31,10 @@ import { Button } from 'react-bootstrap-storybook';
 
 - [react-bootstrap](https://react-bootstrap.github.io/components/alerts/)
 
+- [bootstrap-icons](https://icons.getbootstrap.com/)
+
+- [lodash](https://lodash.com/)
+
 ## License
 
 MIT © [bonnv79](https://github.com/bonnv79)

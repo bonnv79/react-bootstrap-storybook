@@ -1,5 +1,10 @@
 ## Changelog
 
+##### 1.1.0
+
+- Add Accordion, Badge, Breadcrumb, Card, Carousel, Dropdown
+- Form component doing
+
 ##### 1.0.3
 
 - Add Confirm
