@@ -2,4 +2,5 @@
 
 ##### 1.0.0
 
-Initial react-bootstrap-storybook lib
+- Initial react-bootstrap-storybook lib
+- Add Button, ButtonGroup
