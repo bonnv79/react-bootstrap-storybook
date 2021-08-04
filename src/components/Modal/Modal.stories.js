@@ -8,16 +8,16 @@ export default {
 };
 
 const Template = (args) => {
-  const [show, setShow] = React.useState(false);
+  const [show, setShow] = React.useState(args.show);
   const onClose = () => setShow(false);
 
   return (
     <>
       <Button onClick={() => setShow(true)}>Open modal</Button>
 
-      <Modal {...args} show={show} onHide={onClose} onCancel={onClose} >
+      <Modal {...args} show={show} onHide={onClose} onCancel={onClose} onSave={onClose} >
         <div style={{ height: 200 }}>
-          dsfdsfsdf
+          Modal Body
         </div>
       </Modal>
     </>
@@ -26,6 +26,7 @@ const Template = (args) => {
 
 export const Modal_Story = Template.bind({});
 Modal_Story.args = {
+  show: true,
   title: 'Modal title',
   footer: ''
 };

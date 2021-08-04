@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
+import { ToggleButtonGroup as BToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 
 const toggleButtonGroupVariant = {
   PRIMARY: 'primary',
@@ -19,7 +19,7 @@ const toggleButtonGroupType = {
   CHECKBOX: 'checkbox'
 };
 
-const ToggleButtonGroupB = ({
+const ToggleButtonGroup = ({
   options,
   value,
   name,
@@ -31,7 +31,7 @@ const ToggleButtonGroupB = ({
   ...props
 }) => {
   return (
-    <ToggleButtonGroup type={type} name={name} value={value} onChange={onChange} {...props}>
+    <BToggleButtonGroup type={type} name={name} value={value} onChange={onChange} {...props}>
       {options.map((radio) => {
         const optId = radio[valueKey];
         return (
@@ -47,11 +47,11 @@ const ToggleButtonGroupB = ({
           </ToggleButton>
         );
       })}
-    </ToggleButtonGroup>
+    </BToggleButtonGroup>
   );
 };
 
-ToggleButtonGroupB.defaultProps = {
+ToggleButtonGroup.defaultProps = {
   type: toggleButtonGroupType.RADIO,
   variant: toggleButtonGroupVariant.PRIMARY,
   labelKey: 'name',
@@ -62,7 +62,7 @@ ToggleButtonGroupB.defaultProps = {
   onChange: () => { },
 };
 
-ToggleButtonGroupB.propTypes = {
+ToggleButtonGroup.propTypes = {
   type: PropTypes.oneOf(Object.values(toggleButtonGroupType)),
   variant: PropTypes.oneOf(Object.values(toggleButtonGroupVariant)),
   labelKey: PropTypes.string,
@@ -73,5 +73,5 @@ ToggleButtonGroupB.propTypes = {
   onChange: PropTypes.func
 };
 
-export default ToggleButtonGroupB;
-export { ToggleButtonGroupB as ToggleButtonGroup, toggleButtonGroupVariant };
+export default ToggleButtonGroup;
+export { ToggleButtonGroup, toggleButtonGroupVariant };

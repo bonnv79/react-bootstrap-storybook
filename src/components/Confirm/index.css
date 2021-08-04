@@ -1,0 +1,53 @@
+.bootstrap-confirm {
+  min-width: 360px;
+}
+
+.bootstrap-confirm .bootstrap-confirm-header, .bootstrap-confirm-body, .bootstrap-confirm-footer {
+  border: none;
+  padding: 1rem 1.5rem;
+  padding-left: 4rem;
+}
+
+.bootstrap-confirm .bootstrap-confirm-header {
+  padding-top: 1.5rem;
+  padding-bottom: 0.2rem;
+}
+
+.bootstrap-confirm .bootstrap-confirm-header .bootstrap-confirm-title {
+  font-size: 1rem;
+  position: relative;
+}
+
+.bootstrap-confirm .bootstrap-confirm-header .bootstrap-confirm-title .bootstrap-confirm-icon {
+  position: absolute;
+  left: -2.2rem;
+  font-size: 1.5rem;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.bootstrap-confirm .bootstrap-confirm-body {
+  padding: 0 1.5rem;
+  padding-left: 4rem;
+}
+
+
+.bootstrap-confirm .bootstrap-confirm-footer .button-cancel, .button-save {
+  min-width: 60px;
+}
+
+.bootstrap-confirm .bootstrap-confirm-content.confirm {
+  border-color: #00000033;
+}
+
+.bootstrap-confirm .bootstrap-confirm-content.warning {
+  border-color: #faad14;
+}
+
+.bootstrap-confirm .bootstrap-confirm-content.info {
+  border-color: #1890ff;
+}
+
+.bootstrap-confirm .bootstrap-confirm-content.error {
+  border-color: #ff4d4f;
+}

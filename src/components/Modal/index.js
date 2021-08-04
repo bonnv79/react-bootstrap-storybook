@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal as BModal, Button } from 'react-bootstrap';
 import './index.css';
 
 const modalSize = {
@@ -9,7 +9,7 @@ const modalSize = {
   XL: 'xl'
 };
 
-const ModalB = ({
+const Modal = ({
   title,
   children,
   footer,
@@ -36,33 +36,33 @@ const ModalB = ({
   }
 
   return (
-    <Modal
+    <BModal
       show={show}
       onHide={onHide}
       backdrop={backdrop || 'static'}
       keyboard={backdrop === true}
       {...props}
     >
-      <Modal.Header closeButton>
-        <Modal.Title>
+      <BModal.Header closeButton>
+        <BModal.Title>
           {title}
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
+        </BModal.Title>
+      </BModal.Header>
+      <BModal.Body>
         {children}
-      </Modal.Body>
+      </BModal.Body>
       {
         footerComponent && (
-          <Modal.Footer>
+          <BModal.Footer>
             {footerComponent}
-          </Modal.Footer>
+          </BModal.Footer>
         )
       }
-    </Modal>
+    </BModal>
   );
 };
 
-ModalB.defaultProps = {
+Modal.defaultProps = {
   title: '',
   children: '',
   footer: '',
@@ -80,7 +80,7 @@ ModalB.defaultProps = {
   onCancel: undefined,
 };
 
-ModalB.propTypes = {
+Modal.propTypes = {
   title: PropTypes.any,
   children: PropTypes.any,
   footer: PropTypes.any,
@@ -98,5 +98,5 @@ ModalB.propTypes = {
   onCancel: PropTypes.func,
 };
 
-export default ModalB;
-export { ModalB as Modal };
+export default Modal;
+export { Modal };
