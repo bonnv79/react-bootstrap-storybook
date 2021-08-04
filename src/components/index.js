@@ -1,3 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 export * from './Button';
-export * from './ButtonGroup';
+export * from './ToggleButtonGroup';
+export * from './Modal';

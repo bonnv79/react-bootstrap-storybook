@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { ButtonGroup } from '../index';
+import { ToggleButtonGroup } from '../index';
 
 export default {
-  title: 'components/ButtonGroup',
-  component: ButtonGroup,
+  title: 'components/ToggleButtonGroup',
+  component: ToggleButtonGroup,
   argTypes: {},
 };
 
@@ -15,11 +15,11 @@ const options = [
 
 const Template = (args) => {
   const [value, setValue] = useState('1');
-  return <ButtonGroup {...args} value={value} onChange={setValue} />;
+  return <ToggleButtonGroup {...args} value={value} onChange={setValue} />;
 };
 
-export const ButtonGroup_Story = Template.bind({});
-ButtonGroup_Story.args = {
+export const ToggleButtonGroup_Story = Template.bind({});
+ToggleButtonGroup_Story.args = {
   options,
   name: 'toggle-button-group'
 };

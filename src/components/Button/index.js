@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ButtonB from 'react-bootstrap/Button';
+import { Button } from 'react-bootstrap';
 
 const buttonVariant = {
   PRIMARY: 'primary',
@@ -22,15 +22,18 @@ const buttonVariant = {
   OUTLINE_LIGHT: 'outline-light'
 };
 
-const buttonSize = ['sm', 'lg'];
+const buttonSize = {
+  SM: 'sm',
+  LG: 'lg'
+};
 
-const Button = ({ ...props }) => {
+const ButtonB = ({ ...props }) => {
   return (
-    <ButtonB {...props} />
+    <Button {...props} />
   );
 };
 
-Button.defaultProps = {
+ButtonB.defaultProps = {
   children: '',
   variant: 'secondary',
   size: 'sm',
@@ -39,14 +42,14 @@ Button.defaultProps = {
   onClick: undefined,
 };
 
-Button.propTypes = {
+ButtonB.propTypes = {
   children: PropTypes.any,
   variant: PropTypes.oneOf(Object.values(buttonVariant)),
-  size: PropTypes.oneOf(buttonSize),
+  size: PropTypes.oneOf(Object.values(buttonSize)),
   active: PropTypes.bool,
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
-export default Button;
-export { Button, buttonVariant, buttonSize };
+export default ButtonB;
+export { ButtonB as Button, buttonVariant, buttonSize };

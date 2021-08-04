@@ -1,5 +1,10 @@
 ## Changelog
 
+##### 1.0.2
+
+- Add Modal
+- Rename ButtonGroup into ToggleButtonGroup
+
 ##### 1.0.1
 
 - Modify package.json and readme.md
