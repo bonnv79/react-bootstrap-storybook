@@ -35,6 +35,10 @@ import { Button } from 'react-bootstrap-storybook';
 
 - [lodash](https://lodash.com/)
 
+- [yup](https://www.npmjs.com/package/yup)
+
+- [formik](https://formik.org/)
+
 ## License
 
 MIT © [bonnv79](https://github.com/bonnv79)

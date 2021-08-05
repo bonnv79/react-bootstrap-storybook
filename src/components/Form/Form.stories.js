@@ -2,7 +2,7 @@ import React from 'react';
 import { Form } from '../index';
 
 export default {
-  title: 'components/Form',
+  title: 'components/Form/Form',
   component: Form,
   argTypes: {},
 };
@@ -26,52 +26,9 @@ const Template = (args) => {
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasic-Radio">
-        <Form.Check
-          type="radio"
-          name="group1"
-          label="Radio 1"
-          inline
-          id="inline-1"
-        />
-        <Form.Check
-          type="radio"
-          name="group1"
-          label="Radio 2"
-          inline
-          id="inline-2"
-        />
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasic-Range">
-        <Form.Label>Range</Form.Label>
-        <Form.Range />
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasic-Select">
-        <Form.Select aria-label="Default select example">
-          <option>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </Form.Select>
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasic-FloatingLabel">
-        <Form.FloatingLabel
-          controlId="floatingInput"
-          label="Email address"
-          className="mb-3"
-        >
-          <Form.Control type="email" placeholder="name@example.com" />
-        </Form.FloatingLabel>
-      </Form.Group>
     </Form>
   );
 };
 
-export const Form_Story = Template.bind({});
-Form_Story.args = {
-
-}
+export const _Form = Template.bind({});
+_Form.args = {}

@@ -32,8 +32,8 @@ const Template = (args) => {
   return <Carousel {...args} />;
 };
 
-export const Carousel_Story = Template.bind({});
-Carousel_Story.args = {
+export const _Carousel = Template.bind({});
+_Carousel.args = {
   data,
   interval: 3000
 }

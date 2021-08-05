@@ -1,26 +1,12 @@
 {
   "name": "react-bootstrap-storybook",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "react-bootstrap-storybook",
   "author": "bonnv79",
   "license": "MIT",
   "repository": "bonnv79/react-bootstrap-storybook",
   "main": "dist/index.js",
   "private": false,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "bootstrap": "^5.0.2",
-    "bootstrap-icons": "^1.5.0",
-    "gh-pages": "^3.2.3",
-    "lodash": "^4.17.21",
-    "react": "^17.0.2",
-    "react-bootstrap": "^2.0.0-beta.4",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -60,6 +46,18 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "bootstrap": "^5.0.2",
+    "bootstrap-icons": "^1.5.0",
+    "formik": "^2.2.9",
+    "lodash": "^4.17.21",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.0.0-beta.4",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1",
+    "yup": "^0.32.9"
+  },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
     "@babel/preset-env": "^7.14.9",
@@ -70,6 +68,10 @@
     "@storybook/node-logger": "^6.3.6",
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.3.6",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "gh-pages": "^3.2.3",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10"
   }
 }

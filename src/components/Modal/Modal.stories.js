@@ -24,8 +24,8 @@ const Template = (args) => {
   );
 };
 
-export const Modal_Story = Template.bind({});
-Modal_Story.args = {
+export const _Modal = Template.bind({});
+_Modal.args = {
   show: true,
   title: 'Modal title',
   footer: ''

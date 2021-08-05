@@ -11,8 +11,8 @@ const Template = (args) => {
   return <Card {...args} />;
 };
 
-export const Card_Story = Template.bind({});
-Card_Story.args = {
+export const _Card = Template.bind({});
+_Card.args = {
   width: '18rem',
   header: 'Header',
   title: 'Card Title',

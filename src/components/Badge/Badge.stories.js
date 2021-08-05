@@ -15,4 +15,4 @@ const Template = (args) => {
   ));
 };
 
-export const Badge_Story = Template.bind({});
+export const _Badge = Template.bind({});

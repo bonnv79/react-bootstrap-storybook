@@ -25,7 +25,7 @@ const dropdownVariant = {
   OUTLINE_LIGHT: 'outline-light'
 };
 
-const Dropdown = ({ data, defaultText, value, onChange, maxHeight, variant, ...props }) => {
+const Dropdowns = ({ data, defaultText, value, onChange, maxHeight, variant, ...props }) => {
 
   const handleOnChange = (val) => (e) => {
     onChange(val, e);
@@ -62,7 +62,7 @@ const Dropdown = ({ data, defaultText, value, onChange, maxHeight, variant, ...p
   );
 };
 
-Dropdown.defaultProps = {
+Dropdowns.defaultProps = {
   data: [],
   value: '',
   defaultText: 'Select...',
@@ -71,7 +71,7 @@ Dropdown.defaultProps = {
   onChange: () => { }
 };
 
-Dropdown.propTypes = {
+Dropdowns.propTypes = {
   data: PropTypes.arrayOf(Object),
   value: PropTypes.string,
   defaultText: PropTypes.string,
@@ -80,5 +80,5 @@ Dropdown.propTypes = {
   onChange: PropTypes.func,
 };
 
-export default Dropdown;
-export { Dropdown };
+export default Dropdowns;
+export { Dropdowns };

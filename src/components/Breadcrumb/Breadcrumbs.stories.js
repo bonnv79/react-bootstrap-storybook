@@ -26,7 +26,7 @@ const Template = (args) => {
   return <Breadcrumb {...args} />;
 };
 
-export const Breadcrumb_Story = Template.bind({});
-Breadcrumb_Story.args = {
+export const _Breadcrumb = Template.bind({});
+_Breadcrumb.args = {
   data
 }

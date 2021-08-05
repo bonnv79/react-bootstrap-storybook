@@ -22,7 +22,7 @@ const Template = (args) => {
   );
 };
 
-export const Confirm_Story = Template.bind({});
-Confirm_Story.args = {
+export const _Confirm = Template.bind({});
+_Confirm.args = {
   show: true
 };

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Dropdown } from '../index';
+import { Dropdowns } from '../index';
 
 export default {
-  title: 'components/Dropdown',
-  component: Dropdown,
+  title: 'components/Dropdowns',
+  component: Dropdowns,
   argTypes: {},
 };
 
@@ -19,11 +19,11 @@ for (let i = 1; i < 20; i += 1) {
 
 const Template = (args) => {
   const [value, setValue] = React.useState(args.value);
-  return <Dropdown {...args} value={value} onChange={setValue} />;
+  return <Dropdowns {...args} value={value} onChange={setValue} />;
 };
 
-export const Dropdown_Story = Template.bind({});
-Dropdown_Story.args = {
+export const _Dropdowns = Template.bind({});
+_Dropdowns.args = {
   data,
   value: ''
 }

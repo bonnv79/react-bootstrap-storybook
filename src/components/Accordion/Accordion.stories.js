@@ -44,8 +44,8 @@ const Template = (args) => {
   return <Accordion {...args} />;
 };
 
-export const Accordion_Story = Template.bind({});
-Accordion_Story.args = {
+export const _Accordion = Template.bind({});
+_Accordion.args = {
   options,
   defaultActiveKey: '1'
 };

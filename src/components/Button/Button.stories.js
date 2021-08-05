@@ -7,11 +7,11 @@ export default {
   argTypes: {},
 };
 
-export const Button_Story = (args) => {
+export const _Button = (args) => {
   return Object.values(buttonVariant).map(variant => (
     <span key={variant} style={{ margin: 5 }}>
       <Button {...args} variant={variant}>
-        Button
+        {variant}
       </Button>
     </span>
   ));

@@ -1,5 +1,10 @@
 ## Changelog
 
+##### 1.2.0
+
+- Add Dropdowns, InputSearch, ListGroup, Navbars, Canvas
+- Add demo for Form, InputGroup, Image
+
 ##### 1.1.0
 
 - Add Accordion, Badge, Breadcrumb, Card, Carousel, Dropdown
