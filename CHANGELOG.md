@@ -2,8 +2,8 @@
 
 ##### 1.2.0
 
-- Add Dropdowns, InputSearch, ListGroup, Navbars, Canvas
-- Add demo for Form, InputGroup, Image
+- Add Dropdowns, InputSearch, ListGroup, Navbars, Canvas, Paginations, Tables, Tabs, Tooltip, Popovers
+- Add demo for Form, InputGroup, Image, ProgressBar, Spinner
 
 ##### 1.1.0
 

@@ -1,0 +1,4 @@
+.tables-item-selected {
+  background-color: #caeaff;
+  --bs-table-accent-bg: #caeaff;
+}

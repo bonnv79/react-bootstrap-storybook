@@ -1,6 +1,4 @@
-import { Image as _Image } from 'react-bootstrap';
-
-const Image = _Image;
+import { Image } from 'react-bootstrap';
 
 export default Image;
 export { Image };

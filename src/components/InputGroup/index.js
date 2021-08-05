@@ -1,6 +1,4 @@
-import { InputGroup as _InputGroup } from 'react-bootstrap';
-
-const InputGroup = _InputGroup;
+import { InputGroup } from 'react-bootstrap';
 
 export default InputGroup;
 export { InputGroup };

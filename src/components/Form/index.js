@@ -1,6 +1,4 @@
-import { Form as BForm } from 'react-bootstrap';
-
-const Form = BForm;
+import { Form } from 'react-bootstrap';
 
 export default Form;
 export { Form };

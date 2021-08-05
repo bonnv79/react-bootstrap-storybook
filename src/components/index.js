@@ -18,9 +18,15 @@ export * from './ListGroup';
 export * from './Navbars';
 export * from './Canvas';
 export * from './Paginations';
+export * from './Tables';
+export * from './Tabs';
+export * from './Tooltip';
+export * from './Popovers';
 // export * from './Form';
 // export * from './InputGroup';
 // export * from './Image';
+// export * from './ProgressBar';
+// export * from './Spinner';
 
 export {
   Form,
@@ -35,6 +41,10 @@ export {
   Navbar,
   Nav,
   NavDropdown,
+  Popover,
+  OverlayTrigger,
+  ProgressBar,
+  Spinner,
 } from 'react-bootstrap';
 
 export {
