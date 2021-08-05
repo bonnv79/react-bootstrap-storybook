@@ -1,0 +1,11 @@
+.paginations-item {
+  min-width: 42px;
+}
+
+.paginations-item.sm {
+  min-width: 32px;
+}
+
+.paginations-item .page-link {
+  text-align: center;
+}

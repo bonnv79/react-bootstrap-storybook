@@ -17,6 +17,7 @@ export * from './InputSearch';
 export * from './ListGroup';
 export * from './Navbars';
 export * from './Canvas';
+export * from './Paginations';
 // export * from './Form';
 // export * from './InputGroup';
 // export * from './Image';
