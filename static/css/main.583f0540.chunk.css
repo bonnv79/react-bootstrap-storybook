@@ -55,5 +55,29 @@
 .bootstrap-confirm .bootstrap-confirm-content.error {
   border-color: #ff4d4f;
 }
+.canvas-backdrop {
+  z-index: 1040;
+}
+.paginations-item {
+  min-width: 42px;
+}
 
-/*# sourceMappingURL=main.516381e0.chunk.css.map*/
+.paginations-item.sm {
+  min-width: 32px;
+}
+
+.paginations-item .page-link {
+  text-align: center;
+}
+.tables-item-selected {
+  background-color: #caeaff;
+  --bs-table-accent-bg: #caeaff;
+}
+.tooltip-container {
+  display: inline-block;
+}
+.popovers-container {
+  display: inline-block;
+}
+
+/*# sourceMappingURL=main.583f0540.chunk.css.map*/
