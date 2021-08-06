@@ -22,5 +22,6 @@ _Popovers.args = {
   ),
   flip: true,
   placement: undefined,
-  trigger: "click"
+  trigger: "click",
+  backdrop: true,
 };

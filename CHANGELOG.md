@@ -1,5 +1,11 @@
 ## Changelog
 
+##### 1.2.1
+
+- Modify storybook menu
+- Add backdrop property for Popovers
+- Modify Introduction.stories.mdx
+
 ##### 1.2.0
 
 - Add Dropdowns, InputSearch, ListGroup, Navbars, Canvas, Paginations, Tables, Tabs, Tooltip, Popovers

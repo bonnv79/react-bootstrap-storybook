@@ -2,12 +2,12 @@ import React from 'react';
 import { Form } from '../index';
 
 export default {
-  title: 'components/Form/FloatingLabel',
+  title: 'components/Form/Floatinglabel',
   component: Form,
   argTypes: {},
 };
 
-const FormControlTemplate = (args) => {
+const Template = (args) => {
   return (
     <Form>
       <h3>Form.FloatingLabel</h3>
@@ -25,5 +25,5 @@ const FormControlTemplate = (args) => {
   );
 };
 
-export const FloatingLabel = FormControlTemplate.bind({});
-FloatingLabel.args = {}
+export const Floatinglabel = Template.bind({});
+Floatinglabel.args = {}

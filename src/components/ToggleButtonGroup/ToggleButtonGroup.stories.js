@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ToggleButtonGroup } from '../index';
 
 export default {
-  title: 'components/ToggleButtonGroup',
+  title: 'components/Togglebuttongroup',
   component: ToggleButtonGroup,
   argTypes: {},
 };
@@ -12,8 +12,8 @@ const Template = (args) => {
   return <ToggleButtonGroup {...args} value={value} onChange={setValue} />;
 };
 
-export const _ToggleButtonGroup = Template.bind({});
-_ToggleButtonGroup.args = {
+export const Togglebuttongroup = Template.bind({});
+Togglebuttongroup.args = {
   options: [
     { name: 'Active', value: '1' },
     { name: 'Radio', value: '2' },

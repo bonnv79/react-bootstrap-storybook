@@ -2,7 +2,7 @@ import React from 'react';
 import { ProgressBar } from '../index';
 
 export default {
-  title: 'components/ProgressBar',
+  title: 'components/Progressbar',
   component: ProgressBar,
   argTypes: {},
 };
@@ -47,7 +47,7 @@ const Template = (args) => {
   );
 };
 
-export const _ProgressBar = Template.bind({});
-_ProgressBar.args = {
+export const Progressbar = Template.bind({});
+Progressbar.args = {
 
 };

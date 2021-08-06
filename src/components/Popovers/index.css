@@ -1,3 +1,11 @@
 .popovers-container {
   display: inline-block;
 }
+
+.popovers-dialog {
+  display: none;
+}
+
+.popovers-backdrop {
+  background-color: transparent;
+}

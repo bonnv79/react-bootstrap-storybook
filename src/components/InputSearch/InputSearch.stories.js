@@ -2,7 +2,7 @@ import React from 'react';
 import { InputSearch } from '../index';
 
 export default {
-  title: 'components/InputSearch',
+  title: 'components/Inputsearch',
   component: InputSearch,
   argTypes: {},
 };
@@ -23,7 +23,7 @@ const Template = (args) => {
   </>;
 };
 
-export const _InputSearch = Template.bind({});
-_InputSearch.args = {
+export const Inputsearch = Template.bind({});
+Inputsearch.args = {
 
 }

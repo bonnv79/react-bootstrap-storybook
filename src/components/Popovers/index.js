@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
+import { OverlayTrigger, Popover, Modal } from 'react-bootstrap';
 import './index.css';
 
 const popoversPlacements = {
@@ -21,7 +21,19 @@ const popoversPlacements = {
   LEFT_START: 'left-start'
 }
 
-const Popovers = ({ children, title, component, containerClassName, ...props }) => {
+const Popovers = ({
+  children,
+  title,
+  component,
+  containerClassName,
+  backdrop: propBackdrop,
+  onHide,
+  trigger,
+  ...props
+}) => {
+  const [open, setOpen] = React.useState(false);
+  const backdrop = trigger === 'click' && propBackdrop;
+
   const popover = (
     <Popover>
       {title && (
@@ -36,16 +48,38 @@ const Popovers = ({ children, title, component, containerClassName, ...props }) 
   );
 
   return (
-    <OverlayTrigger
-      overlay={
-        popover
+    <>
+      <OverlayTrigger
+        show={backdrop ? open : undefined}
+        overlay={
+          popover
+        }
+        onHide={onHide}
+        trigger={trigger}
+        {...props}
+      >
+        <div
+          className={containerClassName}
+          onClick={() => backdrop && setOpen(!open)}
+        >
+          {children}
+        </div>
+      </OverlayTrigger>
+      {
+        backdrop && (
+          <Modal
+            show={open}
+            onHide={() => {
+              setOpen(false);
+              onHide();
+            }}
+            animation={false}
+            dialogClassName="popovers-dialog"
+            backdropClassName="popovers-backdrop"
+          />
+        )
       }
-      {...props}
-    >
-      <div className={containerClassName}>
-        {children}
-      </div>
-    </OverlayTrigger>
+    </>
   );
 };
 
@@ -56,7 +90,9 @@ Popovers.defaultProps = {
   flip: true,
   placement: undefined,
   trigger: "click", // 'hover', 'click', 'focus'
-  containerClassName: 'popovers-container'
+  containerClassName: 'popovers-container',
+  backdrop: true,
+  onHide: () => { }
 };
 
 Popovers.propTypes = {
@@ -66,7 +102,9 @@ Popovers.propTypes = {
   flip: PropTypes.bool,
   placement: PropTypes.oneOf(Object.values(popoversPlacements)),
   trigger: PropTypes.oneOfType([PropTypes.oneOf(['hover', 'click', 'focus']), PropTypes.instanceOf(Array)]),
-  containerClassName: PropTypes.string
+  containerClassName: PropTypes.string,
+  backdrop: PropTypes.bool,
+  onHide: PropTypes.func,
 };
 
 export default Popovers;

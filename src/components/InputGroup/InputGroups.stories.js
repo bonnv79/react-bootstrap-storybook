@@ -2,12 +2,12 @@ import React from 'react';
 import { InputGroup, Form, FormControl, Button, Dropdown, DropdownButton } from '../index';
 
 export default {
-  title: 'components/InputGroup',
+  title: 'components/Inputgroup',
   component: InputGroup,
   argTypes: {},
 };
 
-export const _InputGroup = () => {
+export const Inputgroup = () => {
   return (
     <>
       <h3>InputGroup</h3>

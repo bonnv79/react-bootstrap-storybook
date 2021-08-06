@@ -2,7 +2,7 @@ import React from 'react';
 import { ListGroup } from '../index';
 
 export default {
-  title: 'components/ListGroup',
+  title: 'components/Listgroup',
   component: ListGroup,
   argTypes: {},
 };
@@ -12,8 +12,8 @@ const Template = (args) => {
   return <ListGroup {...args} value={value} onChange={setValue} />;
 };
 
-export const _ListGroup = Template.bind({});
-_ListGroup.args = {
+export const Listgroup = Template.bind({});
+Listgroup.args = {
   data: [
     {
       id: '1',
