@@ -80,4 +80,12 @@
   display: inline-block;
 }
 
-/*# sourceMappingURL=main.583f0540.chunk.css.map*/
+.popovers-dialog {
+  display: none;
+}
+
+.popovers-backdrop {
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=main.121ba055.chunk.css.map*/
