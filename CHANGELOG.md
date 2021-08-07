@@ -1,5 +1,10 @@
 ## Changelog
 
+##### 1.3.0
+
+- Add CheckboxGroup, RadioGroup, Select, Toasts
+- Add demo for Alert
+
 ##### 1.2.1
 
 - Modify storybook menu
