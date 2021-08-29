@@ -12,6 +12,7 @@
 /build
 /dist
 /storybook-static
+package-lock.json
 
 # misc
 .DS_Store
