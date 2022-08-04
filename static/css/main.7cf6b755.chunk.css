@@ -73,6 +73,24 @@
   background-color: #caeaff;
   --bs-table-accent-bg: #caeaff;
 }
+
+.table-ellipsis {
+  width: 100%;
+}
+
+/* .table-ellipsis thead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+} */
+
+.table-ellipsis td {
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
 .tooltip-container {
   display: inline-block;
 }
@@ -88,4 +106,4 @@
   background-color: transparent;
 }
 
-/*# sourceMappingURL=main.121ba055.chunk.css.map*/
+/*# sourceMappingURL=main.7cf6b755.chunk.css.map*/
