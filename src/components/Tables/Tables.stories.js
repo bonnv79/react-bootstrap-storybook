@@ -21,10 +21,10 @@ const data = [
     address: '10 Downing Street',
   },
   {
-    id: 'id-3',
-    name: 'John',
+    id: 'id-3333333333333333333333',
+    name: 'This text is quite long, and will be truncated once displayed.',
     age: 42,
-    address: '10 Downing Street',
+    address: '10 Downing Street, This text is quite long, and will be truncated once displayed.',
   },
 ];
 
@@ -69,4 +69,5 @@ _Tables.args = {
   borderless: false,
   size: 'lg',
   variant: undefined,
+  ellipsis: true,
 };

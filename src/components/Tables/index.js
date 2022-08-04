@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Table } from 'react-bootstrap';
 import './index.css';
+import { toString } from 'lodash';
 
 const tablesVariants = {
   PRIMARY: 'primary',
@@ -15,13 +16,13 @@ const tablesVariants = {
   LINK: 'link',
 };
 
-const Tables = ({ data, columns, rowKey, value, onChange, ...props }) => {
+const Tables = ({ data, columns, rowKey, value, onChange, ellipsis, className, ...props }) => {
   const handleOnChange = (val) => (e) => {
     onChange(val, e);
   }
 
   return (
-    <Table {...props}>
+    <Table className={`${className} ${ellipsis ? 'table-ellipsis' : ''}`} {...props}>
       <thead>
         <tr>
           {
@@ -37,9 +38,9 @@ const Tables = ({ data, columns, rowKey, value, onChange, ...props }) => {
         {
           data.map((item, rowIndex) => {
             const id = item[rowKey];
-            const className = id === value ? 'tables-item-selected' : '';
+            const trClassName = id === value ? 'tables-item-selected' : '';
             return (
-              <tr key={id} className={className} onClick={handleOnChange(id)}>
+              <tr key={id} className={trClassName} onClick={handleOnChange(id)}>
                 {
                   columns.map(col => {
                     const { render, dataIndex } = col;
@@ -50,7 +51,7 @@ const Tables = ({ data, columns, rowKey, value, onChange, ...props }) => {
                     }
 
                     return (
-                      <td key={`${id}${dataIndex}`} className={className}>
+                      <td title={toString(label)} key={`${id}${dataIndex}`} className={trClassName}>
                         {label}
                       </td>
                     )
@@ -77,7 +78,9 @@ Tables.defaultProps = {
   size: undefined,
   variant: undefined,
   value: '',
-  onChange: () => { }
+  onChange: () => { },
+  ellipsis: true,
+  className: '',
 };
 
 Tables.propTypes = {
@@ -93,6 +96,8 @@ Tables.propTypes = {
   variant: PropTypes.oneOf(Object.values(tablesVariants)),
   value: PropTypes.string,
   onChange: PropTypes.func,
+  ellipsis: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 export default Tables;

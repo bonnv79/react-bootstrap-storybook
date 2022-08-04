@@ -2,3 +2,21 @@
   background-color: #caeaff;
   --bs-table-accent-bg: #caeaff;
 }
+
+.table-ellipsis {
+  width: 100%;
+}
+
+/* .table-ellipsis thead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+} */
+
+.table-ellipsis td {
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}

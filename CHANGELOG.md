@@ -1,5 +1,9 @@
 ## Changelog
 
+##### 1.3.3 - 4/8/2022
+
+- Improvement: Add ellipsis for table component
+
 ##### 1.3.2
 
 - Modify package.json publish lib
