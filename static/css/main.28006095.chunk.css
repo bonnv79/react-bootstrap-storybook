@@ -105,5 +105,25 @@
 .popovers-backdrop {
   background-color: transparent;
 }
+.placeholder-root {
+  display: inline;
+  display: initial;
+}
 
-/*# sourceMappingURL=main.7cf6b755.chunk.css.map*/
+.placeholder-root .margin {
+  margin-right: 5px;
+}
+.loading-root {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000091;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=main.28006095.chunk.css.map*/
