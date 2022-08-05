@@ -8,12 +8,15 @@ export default {
 };
 
 const Template = (args) => {
-  return <Tooltip {...args} />;
+  return (
+    <Tooltip {...args} >
+      <Button>Hover to see</Button>
+    </Tooltip>
+  );
 };
 
 export const _Tooltip = Template.bind({});
 _Tooltip.args = {
-  children: <Button>Hover to see</Button>,
   title: 'Tooltip Title',
   flip: true,
   placement: undefined,

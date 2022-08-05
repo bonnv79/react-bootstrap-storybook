@@ -1,5 +1,10 @@
 ## Changelog
 
+##### 1.4.0 - 5/8/2022
+
+- New-feature: Upgrade bootstrap 5.2.0, bootstrap-icons 1.9.1, react-bootstrap 2.4.0
+- New-feature: Add new Placeholders component, Loading component
+
 ##### 1.3.3 - 4/8/2022
 
 - Improvement: Add ellipsis for table component

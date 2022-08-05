@@ -26,6 +26,8 @@ export * from './CheckboxGroup';
 export * from './RadioGroup';
 export * from './Select';
 export * from './Toasts';
+export * from './Placeholders';
+export * from './Loading';
 // export * from './Form';
 // export * from './InputGroup';
 // export * from './Image';
