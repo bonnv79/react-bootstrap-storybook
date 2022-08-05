@@ -1,6 +1,6 @@
 {
   "name": "react-bootstrap-storybook",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "react-bootstrap-storybook",
   "author": "bonnv79",
   "license": "MIT",
@@ -57,7 +57,7 @@
     "bootstrap-icons": "^1.9.1",
     "formik": "^2.2.9",
     "lodash": "^4.17.21",
-    "react-bootstrap": "^2.4.0",
+    "react-bootstrap": "^2.5.0",
     "yup": "^0.32.9"
   },
   "peerDependencies": {

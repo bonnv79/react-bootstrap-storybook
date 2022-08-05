@@ -1,5 +1,10 @@
 ## Changelog
 
+##### 1.4.1 - 5/8/2022
+
+- New-feature: Upgrade react-bootstrap 2.5.0
+- Fix-bug: Fix error for tooltip and popovers
+
 ##### 1.4.0 - 5/8/2022
 
 - New-feature: Upgrade bootstrap 5.2.0, bootstrap-icons 1.9.1, react-bootstrap 2.4.0
