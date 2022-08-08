@@ -1,0 +1,9 @@
+.btn-loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-loading-container .btn-loading-text {
+  margin-left: 5px;
+}

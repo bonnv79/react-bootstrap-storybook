@@ -1,3 +1,19 @@
+.table-scroll {
+  overflow-y: auto;
+}
+
+.table-scroll .table-responsive {
+  overflow-x: unset;
+}
+
+.table-scroll .table-responsive table thead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1;
+}
+
 .tables-item-selected {
   background-color: #caeaff;
   --bs-table-accent-bg: #caeaff;
@@ -6,12 +22,6 @@
 .table-ellipsis {
   width: 100%;
 }
-
-/* .table-ellipsis thead {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-} */
 
 .table-ellipsis td {
   max-width: 0;

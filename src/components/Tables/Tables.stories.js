@@ -4,18 +4,22 @@ import { Tables } from '../index';
 export default {
   title: 'components/Tables',
   component: Tables,
-  argTypes: {},
+  argTypes: {
+    maxHeight: {
+      description: 'Ex: 200px | 100vh',
+    },
+  },
 };
 
 const data = [
   {
-    id: 'id-1',
+    id: 'id-01',
     name: 'Mike',
     age: 32,
     address: '10 Downing Street',
   },
   {
-    id: 'id-2',
+    id: 'id-02',
     name: 'John',
     age: 42,
     address: '10 Downing Street',
@@ -27,6 +31,15 @@ const data = [
     address: '10 Downing Street, This text is quite long, and will be truncated once displayed.',
   },
 ];
+
+for (let i = 1; i < 20; i++) {
+  data.push({
+    id: 'id-' + i,
+    name: 'Test ' + i,
+    age: i,
+    address: 'Test ' + i,
+  })
+}
 
 const columns = [
   {
@@ -54,11 +67,17 @@ const columns = [
 
 const Template = (args) => {
   const [value, setValue] = React.useState('');
-  return <Tables {...args} value={value} onChange={setValue} />;
+  const onChange = (value, event, rowData) => {
+    setValue(value);
+  }
+  return (
+    <Tables {...args} value={value} onChange={onChange} />
+  );
 };
 
 export const _Tables = Template.bind({});
 _Tables.args = {
+  maxHeight: '',
   data,
   columns,
   rowKey: 'id',

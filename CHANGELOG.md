@@ -1,5 +1,10 @@
 ## Changelog
 
+##### 1.4.3 - 8/8/2022
+
+- New-feature: Add loading for Button component
+- New-feature: Add scroll for Table component (config maxHeight)
+
 ##### 1.4.2 - 8/8/2022
 
 - Improvement: Remove stories.js files in build code

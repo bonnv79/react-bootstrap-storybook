@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button as BButton } from 'react-bootstrap';
+import { Button as BButton, Spinner } from 'react-bootstrap';
+import './index.css';
 
 const buttonVariant = {
   PRIMARY: 'primary',
@@ -27,9 +28,16 @@ const buttonSize = {
   LG: 'lg'
 };
 
-const Button = ({ ...props }) => {
+const Button = ({ loading, loadingText, children, SpinnerProps, ...props }) => {
   return (
-    <BButton {...props} />
+    <BButton {...props}>
+      {loading ? (
+        <span className="btn-loading-container">
+          <Spinner {...SpinnerProps} />
+          <span className="btn-loading-text">{loadingText}</span>
+        </span>
+      ) : children}
+    </BButton>
   );
 };
 
@@ -40,6 +48,12 @@ Button.defaultProps = {
   active: false,
   disabled: false,
   onClick: undefined,
+  loading: false,
+  loadingText: 'Loading',
+  SpinnerProps: {
+    size: 'sm',
+    animation: 'border',
+  }
 };
 
 Button.propTypes = {
@@ -49,6 +63,9 @@ Button.propTypes = {
   active: PropTypes.bool,
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
+  loading: PropTypes.bool,
+  loadingText: PropTypes.string,
+  SpinnerProps: PropTypes.instanceOf(Object),
 };
 
 export default Button;
