@@ -1,5 +1,9 @@
 ## Changelog
 
+##### 1.4.2 - 8/8/2022
+
+- Improvement: Remove stories.js files in build code
+
 ##### 1.4.1 - 5/8/2022
 
 - New-feature: Upgrade react-bootstrap 2.5.0
