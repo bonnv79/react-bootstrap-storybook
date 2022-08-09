@@ -47,7 +47,8 @@ const DEFAULT_PAGINATIONS_PROPS = {
   config: 5,
   size: 'sm',
   pageSize: DEFAULT_PAGE_SIZE,
-  pageSizeOptions: PAGE_SIZE_OPTIONS
+  pageSizeOptions: PAGE_SIZE_OPTIONS,
+  renderTotalText: (length) => (`Total: ${length}`)
 };
 
 const PAGINATIONS_SIZE = {
@@ -67,12 +68,14 @@ const Tables = ({
   theadClassName,
   pagination,
   PaginationsProps: initPaginationsProps,
+  renderDataNotFound,
   ...props
 }) => {
-  const { pageSizeOptions, ...PaginationsProps } = Object.assign(DEFAULT_PAGINATIONS_PROPS, initPaginationsProps);
+  const { pageSizeOptions, renderTotalText, ...PaginationsProps } = Object.assign(DEFAULT_PAGINATIONS_PROPS, initPaginationsProps);
   const [pageSize, setPageSize] = useState(PaginationsProps.pageSize);
   const [activeIndex, setActiveIndex] = useState(0);
   const [data, setData] = useState(pagination ? initData?.slice(0, pageSize) : initData);
+  const isEmpty = initData?.length <= 0;
 
   const freshData = () => {
     const totalPage = Math.ceil(initData?.length / pageSize);
@@ -125,6 +128,11 @@ const Tables = ({
             </tr>
           </thead>
           <tbody>
+            {isEmpty && (
+              <tr>
+                <td colSpan={columns?.length + 1}>{renderDataNotFound(PAGINATIONS_SIZE[props.size])}</td>
+              </tr>
+            )}
             {
               (pagination ? data : initData)?.map((item, rowIndex) => {
                 const id = item[rowKey];
@@ -163,12 +171,12 @@ const Tables = ({
         </Table>
       </div>
       {
-        pagination && (
+        (pagination && !isEmpty) && (
           <div className='table-paginations'>
             <span
               className={PAGINATIONS_SIZE[PaginationsProps.size]}
             >
-              Total: {initData?.length}
+              {renderTotalText(initData?.length)}
             </span>
             <span>
               <Select
@@ -210,7 +218,10 @@ Tables.defaultProps = {
   maxHeight: undefined,
   theadClassName: '',
   pagination: false,
-  PaginationsProps: DEFAULT_PAGINATIONS_PROPS
+  PaginationsProps: DEFAULT_PAGINATIONS_PROPS,
+  renderDataNotFound: (className) => (
+    <div className={`data-not-found ${className}`}>Data Not Found</div>
+  )
 };
 
 Tables.propTypes = {
@@ -231,7 +242,8 @@ Tables.propTypes = {
   maxHeight: PropTypes.string,
   theadClassName: PropTypes.string,
   pagination: PropTypes.bool,
-  PaginationsProps: PropTypes.instanceOf(Object)
+  PaginationsProps: PropTypes.instanceOf(Object),
+  renderDataNotFound: PropTypes.func
 };
 
 export default Tables;

@@ -82,7 +82,7 @@ _Tables.args = {
   pagination: false,
   PaginationsProps: {
     size: 'sm',
-    pageSize: 5
+    pageSize: 10
   },
   maxHeight: '',
   ellipsis: true,
@@ -94,6 +94,6 @@ _Tables.args = {
   hover: true,
   responsive: true,
   borderless: false,
-  size: 'sm',
+  size: undefined,
   variant: undefined,
 };

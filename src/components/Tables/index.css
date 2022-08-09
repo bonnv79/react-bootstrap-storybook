@@ -51,3 +51,10 @@
 .table-container .table-paginations>span {
   margin-right: 8px;
 }
+
+.table-container .data-not-found {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
