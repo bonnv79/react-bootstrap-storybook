@@ -130,6 +130,13 @@
 .table-container .table-paginations>span {
   margin-right: 8px;
 }
+
+.table-container .data-not-found {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .tooltip-container {
   display: inline-block;
 }
@@ -165,4 +172,4 @@
   justify-content: center;
 }
 
-/*# sourceMappingURL=main.003af751.chunk.css.map*/
+/*# sourceMappingURL=main.15147842.chunk.css.map*/
