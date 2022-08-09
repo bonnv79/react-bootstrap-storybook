@@ -32,7 +32,7 @@ const data = [
   },
 ];
 
-for (let i = 1; i < 20; i++) {
+for (let i = 1; i <= 22; i++) {
   data.push({
     id: 'id-' + i,
     name: 'Test ' + i,
@@ -43,7 +43,7 @@ for (let i = 1; i < 20; i++) {
 
 const columns = [
   {
-    title: '#',
+    title: 'STT',
     dataIndex: 'stt',
     render: (value, row) => (row.rowIndex + 1)
   },
@@ -70,14 +70,22 @@ const Template = (args) => {
   const onChange = (value, event, rowData) => {
     setValue(value);
   }
+  const paginationColumns = [...args.columns];
+  paginationColumns.shift();
   return (
-    <Tables {...args} value={value} onChange={onChange} />
+    <Tables {...args} columns={args.pagination ? paginationColumns : args.columns} value={value} onChange={onChange} />
   );
 };
 
 export const _Tables = Template.bind({});
 _Tables.args = {
+  pagination: false,
+  PaginationsProps: {
+    size: 'sm',
+    pageSize: 5
+  },
   maxHeight: '',
+  ellipsis: true,
   data,
   columns,
   rowKey: 'id',
@@ -86,7 +94,6 @@ _Tables.args = {
   hover: true,
   responsive: true,
   borderless: false,
-  size: 'lg',
+  size: 'sm',
   variant: undefined,
-  ellipsis: true,
 };

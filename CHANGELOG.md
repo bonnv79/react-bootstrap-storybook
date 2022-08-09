@@ -3,7 +3,7 @@
 ##### 1.4.3 - 8/8/2022
 
 - New-feature: Add loading for Button component
-- New-feature: Add scroll for Table component (config maxHeight)
+- New-feature: Add scroll and pagination for Table component (config maxHeight, pagination)
 
 ##### 1.4.2 - 8/8/2022
 

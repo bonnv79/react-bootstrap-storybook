@@ -30,3 +30,24 @@
   white-space: nowrap;
   vertical-align: middle;
 }
+
+.table-container .center {
+  text-align: center;
+}
+
+.table-container .table-paginations {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.table-container .table-paginations .pagination {
+  margin: 0;
+}
+
+.table-container .table-paginations>span {
+  margin-right: 8px;
+}

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Table } from 'react-bootstrap';
 import './index.css';
-import { toString } from 'lodash';
+import { isString } from 'lodash';
+import Paginations from '../Paginations';
+import Select from '../Select';
 
 const tablesVariants = {
   PRIMARY: 'primary',
@@ -16,54 +18,176 @@ const tablesVariants = {
   LINK: 'link',
 };
 
-const Tables = ({ data, columns, rowKey, value, onChange, ellipsis, className, maxHeight, theadClassName, ...props }) => {
+const PAGE_SIZE_OPTIONS = [
+  {
+    id: 5,
+    name: 5
+  },
+  {
+    id: 10,
+    name: 10
+  },
+  {
+    id: 20,
+    name: 20
+  },
+  {
+    id: 50,
+    name: 50
+  },
+  {
+    id: 100,
+    name: 100
+  },
+];
+
+const DEFAULT_PAGE_SIZE = 10;
+
+const DEFAULT_PAGINATIONS_PROPS = {
+  config: 5,
+  size: 'sm',
+  pageSize: DEFAULT_PAGE_SIZE,
+  pageSizeOptions: PAGE_SIZE_OPTIONS
+};
+
+const PAGINATIONS_SIZE = {
+  sm: 'form-select-sm',
+  lg: 'form-select-lg',
+}
+
+const Tables = ({
+  data: initData,
+  columns,
+  rowKey,
+  value,
+  onChange,
+  ellipsis,
+  className,
+  maxHeight,
+  theadClassName,
+  pagination,
+  PaginationsProps: initPaginationsProps,
+  ...props
+}) => {
+  const { pageSizeOptions, ...PaginationsProps } = Object.assign(DEFAULT_PAGINATIONS_PROPS, initPaginationsProps);
+  const [pageSize, setPageSize] = useState(PaginationsProps.pageSize);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [data, setData] = useState(pagination ? initData?.slice(0, pageSize) : initData);
+
+  const freshData = () => {
+    const totalPage = Math.ceil(initData?.length / pageSize);
+    handleChangePage(Math.min(activeIndex, totalPage - 1), pageSize);
+  }
+
+  useEffect(() => {
+    if (pagination) {
+      freshData();
+    }
+  }, [initData, pagination]);
+
   const handleOnChange = (val, item) => (e) => {
     onChange(val, e, item);
   }
 
+  const handleChangePage = (value, vPageSize = pageSize) => {
+    setActiveIndex(value);
+    const start = value * vPageSize;
+    const newData = initData?.slice(start, start + vPageSize);
+    setData(newData);
+  }
+
+  const handlePageSize = (value) => {
+    const vPageSize = Number(value);
+    setActiveIndex(0);
+    setPageSize(vPageSize);
+    handleChangePage(0, vPageSize);
+  }
+
   return (
-    <div className={maxHeight ? 'table-scroll' : ''} style={{ maxHeight }}>
-      <Table className={`${className} ${ellipsis ? 'table-ellipsis' : ''}`} {...props}>
-        <thead className={theadClassName}>
-          <tr>
+    <div className='table-container'>
+      <div className={maxHeight ? 'table-scroll' : ''} style={{ maxHeight }}>
+        <Table className={`${className} ${ellipsis ? 'table-ellipsis' : ''}`} {...props}>
+          <thead className={theadClassName}>
+            <tr>
+              {
+                pagination && (
+                  <th className='center'>#</th>
+                )
+              }
+
+              {
+                columns?.map(col => {
+                  return (
+                    <th key={col.dataIndex}>{col.title}</th>
+                  )
+                })
+              }
+            </tr>
+          </thead>
+          <tbody>
             {
-              columns.map(col => {
+              (pagination ? data : initData)?.map((item, rowIndex) => {
+                const id = item[rowKey];
+                const trClassName = id === value ? 'tables-item-selected' : '';
                 return (
-                  <th key={col.dataIndex}>{col.title}</th>
+                  <tr key={id} className={trClassName} onClick={handleOnChange(id, item)}>
+                    {
+                      pagination && (
+                        <td className={`center ${trClassName}`}>
+                          {activeIndex * pageSize + rowIndex + 1}
+                        </td>
+                      )
+                    }
+
+                    {
+                      columns?.map(col => {
+                        const { render, dataIndex } = col;
+                        let label = item[dataIndex];
+
+                        if (typeof render === 'function') {
+                          label = render(id, { ...item, rowIndex });
+                        }
+
+                        return (
+                          <td title={isString(label) ? label : undefined} key={`${id}${dataIndex}`} className={trClassName}>
+                            {label}
+                          </td>
+                        )
+                      })
+                    }
+                  </tr>
                 )
               })
             }
-          </tr>
-        </thead>
-        <tbody>
-          {
-            data.map((item, rowIndex) => {
-              const id = item[rowKey];
-              const trClassName = id === value ? 'tables-item-selected' : '';
-              return (
-                <tr key={id} className={trClassName} onClick={handleOnChange(id, item)}>
-                  {
-                    columns.map(col => {
-                      const { render, dataIndex } = col;
-                      let label = item[dataIndex];
-
-                      if (typeof render === 'function') {
-                        label = render(id, { ...item, rowIndex });
-                      }
-
-                      return (
-                        <td title={toString(label)} key={`${id}${dataIndex}`} className={trClassName}>
-                          {label}
-                        </td>
-                      )
-                    })
-                  }
-                </tr>
-              )
-            })
-          }
-        </tbody>
-      </Table>
+          </tbody>
+        </Table>
+      </div>
+      {
+        pagination && (
+          <div className='table-paginations'>
+            <span
+              className={PAGINATIONS_SIZE[PaginationsProps.size]}
+            >
+              Total: {initData?.length}
+            </span>
+            <span>
+              <Select
+                data={pageSizeOptions}
+                onChange={handlePageSize}
+                value={`${pageSize}`}
+                size={PaginationsProps.size}
+              />
+            </span>
+            <Paginations
+              count={initData?.length}
+              activeIndex={activeIndex}
+              onChange={handleChangePage}
+              {...PaginationsProps}
+              pageSize={pageSize}
+            />
+          </div>
+        )
+      }
     </div>
   );
 };
@@ -85,6 +209,8 @@ Tables.defaultProps = {
   className: '',
   maxHeight: undefined,
   theadClassName: '',
+  pagination: false,
+  PaginationsProps: DEFAULT_PAGINATIONS_PROPS
 };
 
 Tables.propTypes = {
@@ -104,6 +230,8 @@ Tables.propTypes = {
   className: PropTypes.string,
   maxHeight: PropTypes.string,
   theadClassName: PropTypes.string,
+  pagination: PropTypes.bool,
+  PaginationsProps: PropTypes.instanceOf(Object)
 };
 
 export default Tables;
