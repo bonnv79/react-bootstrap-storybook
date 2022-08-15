@@ -171,5 +171,45 @@
   align-items: center;
   justify-content: center;
 }
+.bt-space {
+  display: inline-flex;
+  grid-gap: 16px;
+  gap: 16px;
+}
 
-/*# sourceMappingURL=main.15147842.chunk.css.map*/
+.bt-space.sm {
+  grid-gap: 8px;
+  gap: 8px;
+}
+
+.bt-space.lg {
+  grid-gap: 24px;
+  gap: 24px;
+}
+
+.bt-space.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.bt-space.center {
+  align-items: center;
+}
+
+.bt-space.start {
+  align-items: flex-start;
+}
+
+.bt-space.end {
+  align-items: flex-end;
+}
+
+.bt-space.baseline {
+  align-items: baseline;
+}
+
+.bt-space.wrap {
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=main.6b8a6a04.chunk.css.map*/
