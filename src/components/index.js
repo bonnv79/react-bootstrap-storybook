@@ -29,6 +29,7 @@ export * from './Toasts';
 export * from './Placeholders';
 export * from './Loading';
 export * from './Typography';
+export * from './Space';
 // export * from './Form';
 // export * from './InputGroup';
 // export * from './Image';

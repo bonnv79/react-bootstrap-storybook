@@ -1,0 +1,37 @@
+.bt-space {
+  display: inline-flex;
+  gap: 16px;
+}
+
+.bt-space.sm {
+  gap: 8px;
+}
+
+.bt-space.lg {
+  gap: 24px;
+}
+
+.bt-space.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.bt-space.center {
+  align-items: center;
+}
+
+.bt-space.start {
+  align-items: flex-start;
+}
+
+.bt-space.end {
+  align-items: flex-end;
+}
+
+.bt-space.baseline {
+  align-items: baseline;
+}
+
+.bt-space.wrap {
+  flex-wrap: wrap;
+}

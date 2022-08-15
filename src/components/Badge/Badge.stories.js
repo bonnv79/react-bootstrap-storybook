@@ -17,9 +17,10 @@ const Template = (args) => {
       {
         Object.values(badgeBgs).map(item => {
           const cbg = args.bg || item;
+          const text = args.text || colorByBg[cbg];
           return (
             <span key={item} style={{ margin: 8 }}>
-              <Badge key={item} {...args} bg={cbg} text={colorByBg[cbg]}>
+              <Badge key={item} {...args} bg={cbg} text={text}>
                 {item}
               </Badge>
             </span>
@@ -39,9 +40,10 @@ const TemplateButton = (args) => {
       {
         Object.values(badgeBgs).map(item => {
           const cbg = args.bg || item;
+          const text = args.text || colorByBg[cbg];
           return (
             <span key={item} style={{ margin: 8 }}>
-              <Badge key={item} {...args} bg={cbg} text={colorByBg[cbg]}>
+              <Badge key={item} {...args} bg={cbg} text={text}>
                 <Button variant="outline-primary">{item}</Button>
               </Badge>
             </span>

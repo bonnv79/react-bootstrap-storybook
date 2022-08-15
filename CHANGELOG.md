@@ -1,5 +1,12 @@
 ## Changelog
 
+##### 1.5.0 - 15/8/2022
+
+- New-feature: Update Badge component (new config: badge)
+- New-feature: Add Typography component
+- Improvement: Modify Table component (Handle table empty)
+- New-feature: Add Space component
+
 ##### 1.5.0-beta.1 - 9/8/2022
 
 - New-feature: Update Badge component (new config: badge)

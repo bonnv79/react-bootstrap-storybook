@@ -25,7 +25,7 @@ const colorByBg = {
 
 const Template = (args) => {
   return Object.values(typographyColor).map(color => (
-    <Typography key={color} {...args} bg={bgByColor[color]} color={color}>{color}</Typography>
+    <Typography key={color} {...args} bg={args.bg || bgByColor[color]} color={args.color || color}>{color}</Typography>
   ))
 };
 
@@ -39,7 +39,7 @@ _Typography.args = {
 
 const TemplateBg = (args) => {
   return Object.values(typographyBg).map(bg => (
-    <Typography key={bg} {...args} bg={bg} color={colorByBg[bg]}>{bg}</Typography>
+    <Typography key={bg} {...args} bg={args.bg || bg} color={args.color || colorByBg[bg]}>{bg}</Typography>
   ))
 };
 

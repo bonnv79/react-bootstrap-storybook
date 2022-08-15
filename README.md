@@ -26,7 +26,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 import { Button } from 'react-bootstrap-storybook';
 ```
 
-### Dependencies
+## Dependencies
 
 - [storybook](https://storybook.js.org/docs/react/get-started/introduction)
 
@@ -41,6 +41,9 @@ import { Button } from 'react-bootstrap-storybook';
 - [yup](https://www.npmjs.com/package/yup)
 
 - [formik](https://formik.org/)
+
+## Versions
+[CHANGELOG.md](https://github.com/bonnv79/react-bootstrap-storybook/blob/master/CHANGELOG.md)
 
 ## License
 
