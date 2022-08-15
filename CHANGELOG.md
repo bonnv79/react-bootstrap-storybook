@@ -1,6 +1,6 @@
 ## Changelog
 
-##### 1.5.0 - 15/8/2022
+##### 1.5.1 - 15/8/2022
 
 - New-feature: Update Badge component (new config: badge)
 - New-feature: Add Typography component
